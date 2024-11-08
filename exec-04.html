@@ -1,0 +1,26 @@
+<script>
+// 4) Escreva um programa para calcular e imprimir o número de lâmpadas necessárias para iluminar um determinado cômodo de uma residência. Dados de entrada: a potência da lâmpada utilizada (em watts), as dimensões (largura e comprimento, em metros) do cômodo. Considere que a potência necessária é de 18 watts por metro quadrado. 
+
+
+// entrar com a potencia da lâmpada
+// entrar com a largura (em metros)
+// entrar com o comprimento (em metros)
+// calcular a área do comodo em metros quadrados
+// calcular a potencia necessária para iluminar o cômodo (watts total = 18 * area)
+// calcular a quantidade de lâmpadas, dividindo o watts total pela potencia inserida da lâmpada desejada
+// mostrar a quantidade das lampadas desejadas
+
+// entrada
+let potencialâmpada = parseFloat (prompt ("potencia de lampada utilizada?"))
+let largura = parseFloat (prompt ("Largura do cômodo?"))
+let comprimento = parseFloat (prompt ("Comprimento do comodo?"))
+
+// processamento
+let area = largura * comprimento
+let wattstotal = 18 * area
+let quantidadelâmpada = wattstotal / potencialâmpada
+
+// saída
+document.write ("A quantidade de lâmpadas necessárias:" + quantidadelâmpada)
+
+</script>
