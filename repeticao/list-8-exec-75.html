@@ -1,0 +1,26 @@
+<script>
+// 75) Elabore um algoritmo que gere e escreve os números ímpares entre números 100 e 200.
+
+
+//entrada
+let valor1 = parseFloat (prompt("Digite o valor inicial:"))
+let valor2 = parseFloat (prompt("Digite o valor final:"))
+
+
+//processamento
+function contImpar(valor1,valor2) {
+    let resposta = ""
+    if(valor2 < valor1) return "Valores invalidos!"
+    for (let cont = valor1; cont <= valor2; cont++) { 
+        if (cont % 2 != 0) {
+        resposta += cont + " <br>"
+    }
+}
+    return resposta
+}
+
+// Saída
+document.write("Mostra numeros impares: <br>" + contImpar(valor1,valor2))
+
+
+</script>

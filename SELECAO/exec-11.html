@@ -1,0 +1,22 @@
+1<script>
+// 1) Escreva um programa que verifique a validade de uma senha fornecida pelo usuário. A senha válida é o número 1234. Devem ser impressas as seguintes mensagens: 
+// ACESSO PERMITIDO caso a senha seja válida. 
+// ACESSO NEGADO caso a senha seja inválida. 
+
+// Entrada
+let senha = prompt("Senha")
+
+// Processamento
+function validaSenha(password){
+let resposta = ""
+if (password == "1234"){
+resposta = "ACESSO PERMITIDO"
+} else {
+resposta = "ACESSO NEGADO"    
+}
+return resposta
+}
+// Saida
+document.write(validaSenha(senha))
+
+</script>
