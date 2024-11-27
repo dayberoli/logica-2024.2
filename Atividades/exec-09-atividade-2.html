@@ -1,0 +1,27 @@
+<script>
+// 9. Calculando o valor das maçãs
+// Declaração: Uma fruteira oferece um desconto para a compra de maçãs de uma dúzia. Escreva um programa que calcule o valor total a ser pago por um cliente, considerando a quantidade de maçãs compradas e o preço unitário de acordo com a quantidade.
+
+
+// Entrada
+let quantidadeMacas = parseInt(prompt("Digite a quantidade de maçãs que deseja comprar:"));
+let precoUnitario = parseFloat(prompt("Digite o preço unitário de cada maçã:"));
+
+// Processamento
+function calcularValorTotal(quantidadeMacas, precoUnitario) {
+let valorTotal = quantidadeMacas * precoUnitario;
+  if (quantidadeMacas >= 12) {
+let desconto = valorTotal * 0.10; // 10% de desconto
+    valorTotal -= desconto;
+    return `Total de maçãs: ${quantidadeMacas} | Preço unitário: R$${precoUnitario} | Desconto aplicado: R$${desconto} | Valor total a pagar: R$${valorTotal}`;
+  } else {
+    return `Total de maçãs: ${quantidadeMacas} | Preço unitário: R$${precoUnitario} | Valor total a pagar: R$${valorTotal}`;
+  }
+}
+
+// Saída
+let resultado = calcularValorTotal(quantidadeMacas, precoUnitario);
+document.write(resultado);
+
+
+</script>
