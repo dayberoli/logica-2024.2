@@ -1,0 +1,84 @@
+<script>
+
+    function criarConta() {
+        let nome = prompt("Digite o nome do titular da conta:");
+        let tipo = prompt("Digite o tipo da conta (corrente ou poupança):").toLowerCase();
+    
+        while (tipo !== "corrente" && tipo !== "poupança") {
+            alert("Tipo de conta inválido! Deve ser 'corrente' ou 'poupança'.");
+            tipo = prompt("Digite o tipo da conta (corrente ou poupança):").toLowerCase();
+        }
+    
+        return {
+            titular: nome,
+            saldo: 0,
+            tipo: tipo,
+    
+            depositar: function(valor) {
+                if (valor > 0) {
+                    this.saldo += valor;
+                    alert(`Depósito de R$${valor} realizado com sucesso! Novo saldo: R$${this.saldo}`);
+                } else {
+                    alert("Valor de depósito deve ser positivo.");
+                }
+            },
+    
+            retirar: function(valor) {
+                if (valor > 0 && valor <= this.saldo) {
+                    this.saldo -= valor;
+                    alert(`Retirada de R$${valor} realizada com sucesso! Novo saldo: R$${this.saldo}`);
+                } else if (valor > this.saldo) {
+                    alert("Erro: Saldo insuficiente.");
+                } else {
+                    alert("Valor de retirada deve ser positivo.");
+                }
+            },
+    
+            consultar_saldo: function() {
+                return this.saldo;
+            },
+    
+            exibir_dados: function() {
+                alert(`Titular: ${this.titular}\nTipo de Conta: ${this.tipo}\nSaldo: R$${this.saldo}`);
+            }
+        };
+    }
+    
+    function menu() {
+        let conta = criarConta();
+    
+        while (true) {
+            let opcao = prompt("Escolha uma opção:\n1. Depositar\n2. Retirar\n3. Consultar Saldo\n4. Exibir Dados\n5. Sair");
+    
+            if (opcao === "1") {
+                let valorDeposito = parseFloat(prompt("Digite o valor a ser depositado:"));
+                if (!isNaN(valorDeposito) && valorDeposito >= 0) {
+                    conta.depositar(valorDeposito);
+                } else {
+                    alert("Valor inválido para depósito.");
+                }
+            } else if (opcao === "2") {
+                let valorRetirada = parseFloat(prompt("Digite o valor a ser retirado:"));
+                if (!isNaN(valorRetirada) && valorRetirada >= 0) {
+                    conta.retirar(valorRetirada);
+                } else {
+                    alert("Valor inválido para retirada.");
+                }
+            } else if (opcao === "3") {
+                alert(`Saldo atual: R$${conta.consultar_saldo()}`);
+            } else if (opcao === "4") {
+                conta.exibir_dados();
+            } else if (opcao === "5") {
+                alert("Saindo do sistema. Até logo!");
+                break;
+            } else {
+                alert("Opção inválida. Tente novamente.");
+            }
+        }
+    }
+    
+    
+    menu();
+    
+    
+    </script>

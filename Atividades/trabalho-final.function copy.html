@@ -1,0 +1,57 @@
+<script>
+
+let nome = ""
+let tipo = ""
+let saldo = 0
+criarConta()
+// entrada
+function criarConta(){
+        let nome = prompt("Digite o nome do titular da conta:");
+        let tipo = prompt("Digite o tipo da conta (corrente ou poupança):")
+        let saldo = 0
+let menu = 
+
+function depositar(valor){
+    if (valor > 0) {
+        saldo += valor;
+}
+
+function retirar(valor){
+    if (valor > 0 && valor <= saldo) {
+    saldo -= valor;
+     alert(`Retirada de R$${valor} realizada com sucesso! Novo saldo: R$${saldo}`);
+    } else if (valor > saldo) {
+    alert("Erro: Saldo insuficiente.");
+    } else {
+    alert("Valor de retirada deve ser positivo.");
+    }
+}
+
+function consultar_saldo(valor){
+    return [titular,saldo,tipo];
+}
+
+function exibir_dados(valor){
+    alert(`Titular: ${this.titular}\nTipo de Conta: ${this.tipo}\nSaldo: R$${this.saldo}`);
+            }
+
+function menu(){
+    let opcao = -1
+    while (opcao != 0) {`
+        Titular: ${titular} - ${saldo}
+        [1] - Deposito
+        [2] - Saque
+        [3] - Saldo
+        [4] - Exibir Dados
+        [0] - Sair
+    `}
+}
+if (opcao == 1){
+    let valor = parseFloat(prompt("Valor deposito?"))
+    saldo = depositar(valor)
+    alert(`Saldo: ${saldo}`)
+}
+}
+
+    }
+</script>
