@@ -4,20 +4,22 @@
 
 //processamento
 
-function conteMultiploWhile(){
-    let resposta = ""
-    let cont : 1;
-    while(let cont <=100) {
-        if(cont % 10 == 0){
-            resposta += cont + " (multiplo de 10) <br>"
-        } else{
-            resposta += cont + "<br>"
+function conteMultiploWhile() {
+        let resposta = ""
+        let cont = 1;
+        while (cont <= 100) {
+            if (cont % 10 == 0) {
+                resposta += cont + " (multiplo de 10)<br>"
+            } else {
+                resposta += cont + " <br>"
+            }
+            cont++
         }
-        cont++
+        return resposta
     }
-    return resposta
-}
-//saída
-document.write("Mostra numeros: <br>" + conteMultiplo())
+
+
+    //saida
+    document.write("Monsta Numeros:<br> " + conteMultiploWhile())
 
 </script>
